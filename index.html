@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tahire ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#09050a;
+    color:#fff;
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+/* ARKA PLAN */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(255,80,140,.18),transparent 30%),
+        radial-gradient(circle at 80% 30%,rgba(160,40,100,.13),transparent 30%),
+        radial-gradient(circle at 50% 90%,rgba(255,30,90,.12),transparent 35%),
+        linear-gradient(135deg,#09050a,#160912,#09050a);
+}
+
+/* YILDIZLAR */
+.stars{
+    position:fixed;
+    inset:0;
+    z-index:-4;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:.1;transform:scale(.5)}
+    50%{opacity:.9;transform:scale(1.5)}
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    background:rgba(8,4,9,.45);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:32px;
+    font-weight:700;
+    color:#ff8caf;
+}
+
+.logo span{
+    color:white;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:35px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    opacity:.75;
+    transition:.3s;
+}
+
+nav a:hover{
+    opacity:1;
+    color:#ff82a9;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    padding:120px 20px 80px;
+}
+
+.hero-content{
+    max-width:1000px;
+}
+
+.mini{
+    color:#ff8bad;
+    font-size:11px;
+    letter-spacing:7px;
+    text-transform:uppercase;
+    margin-bottom:35px;
+    animation:appear 1.5s ease;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(90px,18vw,220px);
+    line-height:.75;
+    font-weight:500;
+    background:linear-gradient(
+        120deg,
+        #fff,
+        #ffd8e5,
+        #ff6e9d,
+        #fff
+    );
+    background-size:300%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:
+        titleMove 7s ease infinite,
+        appear 1.5s ease;
+}
+
+@keyframes titleMove{
+    0%{background-position:0%}
+    50%{background-position:100%}
+    100%{background-position:0%}
+}
+
+.hero-sub{
+    margin:45px auto 0;
+    max-width:650px;
+    color:#c9bbc3;
+    line-height:2;
+    font-size:16px;
+    animation:appear 2s ease;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.scroll{
+    position:absolute;
+    bottom:35px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:10px;
+    letter-spacing:4px;
+    color:#988792;
+}
+
+/* GENEL */
+section{
+    padding:130px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title span{
+    color:#ff769f;
+    font-size:10px;
+    letter-spacing:6px;
+    text-transform:uppercase;
+}
+
+.section-title h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:65px;
+    font-weight:500;
+    margin:12px 0;
+}
+
+.section-title p{
+    color:#91818b;
+    font-size:14px;
+}
+
+/* MEKTUP */
+.letter{
+    max-width:850px;
+    margin:auto;
+    padding:70px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,90,140,.025)
+        );
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:35px;
+    box-shadow:0 40px 100px rgba(0,0,0,.4);
+    position:relative;
+}
+
+.letter::before{
+    content:"“";
+    position:absolute;
+    top:10px;
+    left:35px;
+    font-family:Georgia,serif;
+    font-size:100px;
+    color:rgba(255,100,150,.15);
+}
+
+.letter p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+    line-height:1.9;
+    color:#eadfe4;
+    text-align:center;
+}
+
+.signature{
+    text-align:center;
+    margin-top:40px;
+    color:#ff83a9;
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;
+}
+
+/* KARTLAR */
+.cards{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    padding:45px 30px;
+    min-height:260px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:28px;
+    background:rgba(255,255,255,.035);
+    transition:.5s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    background:rgba(255,90,140,.07);
+    border-color:rgba(255,100,150,.25);
+    box-shadow:0 20px 60px rgba(255,40,110,.08);
+}
+
+.card-icon{
+    font-size:38px;
+    margin-bottom:25px;
+}
+
+.card h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#9e9099;
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* BÜYÜK ALINTI */
+.quote{
+    min-height:70vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.quote-box{
+    max-width:900px;
+}
+
+.quote-box .heart{
+    font-size:45px;
+    margin-bottom:30px;
+}
+
+.quote-box h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(45px,7vw,85px);
+    line-height:1.15;
+    font-weight:500;
+}
+
+.quote-box h2 span{
+    color:#ff729e;
+}
+
+.quote-box p{
+    margin-top:35px;
+    color:#958791;
+}
+
+/* SAYIÇ */
+.counter-area{
+    text-align:center;
+}
+
+.counter{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.time{
+    width:150px;
+    padding:30px 15px;
+    border-radius:25px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.time strong{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    font-size:55px;
+    color:#ff80a7;
+}
+
+.time small{
+    color:#82737d;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:9px;
+}
+
+/* SÜRPRİZ */
+.surprise{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+}
+
+.surprise-box{
+    padding:65px 35px;
+    border-radius:35px;
+    border:1px solid rgba(255,100,150,.15);
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,70,130,.10),
+            rgba(255,255,255,.025)
+        );
+}
+
+.surprise-box .big-heart{
+    font-size:65px;
+    margin-bottom:20px;
+    animation:heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    15%{transform:scale(1.15)}
+    30%{transform:scale(1)}
+    45%{transform:scale(1.1)}
+}
+
+.surprise-box h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.surprise-box p{
+    color:#988994;
+    line-height:1.8;
+    font-size:14px;
+}
+
+.btn{
+    border:none;
+    margin-top:30px;
+    padding:17px 35px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff477f,#ff91b4);
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 15px 40px rgba(255,50,110,.25);
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 50px rgba(255,50,110,.4);
+}
+
+.hidden-message{
+    display:none;
+    margin-top:35px;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,.04);
+    color:#e7dbe1;
+    line-height:1.9;
+    animation:appear .8s ease;
+}
+
+/* ALT */
+footer{
+    padding:60px 20px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.06);
+    color:#655761;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+footer span{
+    color:#ff759f;
+}
+
+/* UÇAN KALPLER */
+.floating-hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:20;
+    overflow:hidden;
+}
+
+.float-heart{
+    position:absolute;
+    bottom:-40px;
+    animation:floatUp linear forwards;
+    opacity:0;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0);
+        opacity:0;
+    }
+    15%{
+        opacity:.8;
+    }
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* MOBİL */
+@media(max-width:800px){
+
+    nav{
+        justify-content:center;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    .logo{
+        font-size:28px;
+    }
+
+    section{
+        padding:90px 5%;
+    }
+
+    .section-title h2{
+        font-size:48px;
+    }
+
+    .letter{
+        padding:40px 22px;
+    }
+
+    .letter p{
+        font-size:21px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .time{
+        width:130px;
+    }
+
+    .time strong{
+        font-size:45px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- YILDIZLAR -->
+<div class="stars" id="stars"></div>
+
+<!-- KALPLER -->
+<div class="floating-hearts" id="hearts"></div>
+
+<!-- NAV -->
+<nav>
+    <div class="logo">E <span>♥</span> T</div>
+
+    <ul>
+        <li><a href="#baslangic">Başlangıç</a></li>
+        <li><a href="#mektup">Mektup</a></li>
+        <li><a href="#neden">Neden Sen?</a></li>
+        <li><a href="#zaman">Zaman</a></li>
+        <li><a href="#surpriz">Sürpriz</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="baslangic">
+
+    <div class="hero-content">
+
+        <div class="mini">
+            Sana ayrılmış küçük bir dünya
+        </div>
+
+        <h1>Tahire</h1>
+
+        <div class="hero-sub">
+            Bazı insanlar hayatımıza sessizce girer.
+            Sonra fark etmeden en güzel anılarımızın
+            bir parçası olurlar.
+            <br><br>
+            Bu sayfa da onlardan biri için...
+        </div>
+
+    </div>
+
+    <div class="scroll">
+        AŞAĞI KAYDIR ↓
+    </div>
+
+</section>
+
+<!-- MEKTUP -->
+<section id="mektup">
+
+    <div class="section-title">
+        <span>Sana bir mektup</span>
+        <h2>Tahire'ye...</h2>
+        <p>Bazı şeyleri söylemek yerine yazmak daha kolaydır.</p>
+    </div>
+
+    <div class="letter">
+
+        <p>
+            Tahire...
+            <br><br>
+
+            Bazen bir insanın hayatımıza ne zaman
+            ve nasıl girdiğini düşünürüz.
+            Ama bazı insanların hayatımıza girmesi
+            için büyük bir sebep gerekmez.
+            Sadece doğru zamanda karşılaşmak yeterlidir.
+            <br><br>
+
+            Seninle konuştuğum her an,
+            birlikte güldüğümüz her küçük şey
+            ve paylaştığımız her güzel an
+            benim için ayrı bir yerde.
+            <br><br>
+
+            Belki kelimeler her şeyi anlatmaya yetmez.
+            Ama şunu bilmeni isterim:
+            seni tanımış olmak hayatımın güzel
+            tesadüflerinden biri.
+            <br><br>
+
+            Ve eğer gelecekte bu sayfaya tekrar
+            bakarsak, umarım bugünlerden çok daha
+            fazla güzel anımız olur.
+        </p>
+
+        <div class="signature">
+            İyi ki varsın, Tahire. ❤️
+        </div>
+
+    </div>
+
+</section>
+
+<!-- NEDEN SEN -->
+<section id="neden">
+
+    <div class="section-title">
+        <span>Küçük detaylar</span>
+        <h2>Neden Sen?</h2>
+        <p>Çünkü bazı cevapların tek bir kelimesi yoktur.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">🌹</div>
+            <h3>Gülüşün</h3>
+            <p>
+                Bazen insanın bütün gününü değiştiren
+                şey sadece küçük bir gülümsemedir.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">✨</div>
+            <h3>Enerjin</h3>
+            <p>
+                Yanında olduğumda sıradan anların bile
+                farklı hissettirmesi.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🌙</div>
+            <h3>Konuşmalarımız</h3>
+            <p>
+                Saatin kaç olduğunu unutturacak kadar
+                güzel sohbetler.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🫶</div>
+            <h3>Huzurun</h3>
+            <p>
+                Bazen hiçbir şey söylemeden bile
+                iyi hissettiren o güzel his.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">💫</div>
+            <h3>Anılarımız</h3>
+            <p>
+                Küçük anların zamanla en güzel
+                hatıralara dönüşmesi.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">❤️</div>
+            <h3>Sen</h3>
+            <p>
+                Aslında bütün bu cevapların sonunda
+                tek bir isim var: Tahire.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BÜYÜK SÖZ -->
+<section class="quote">
+
+    <div class="quote-box">
+
+        <div class="heart">♥</div>
+
+        <h2>
+            Bazı insanlar<br>
+            hayatımıza gelir ve<br>
+            <span>kalbimizde kalır.</span>
+        </h2>
+
+        <p>
+            Sen benim için o insanlardan birisin.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ZAMAN -->
+<section class="counter-area" id="zaman">
+
+    <div class="section-title">
+        <span>Bizim zamanımız</span>
+        <h2>Her saniyesi değerli</h2>
+        <p>
+            Bu sayaç, sizin için özel hazırlanmış küçük bir detay.
+        </p>
+    </div>
+
+    <div class="counter">
+
+        <div class="time">
+            <strong id="days">0</strong>
+            <small>Gün</small>
+        </div>
+
+        <div class="time">
+            <strong id="hours">0</strong>
+            <small>Saat</small>
+        </div>
+
+        <div class="time">
+            <strong id="minutes">0</strong>
+            <small>Dakika</small>
+        </div>
+
+        <div class="time">
+            <strong id="seconds">0</strong>
+            <small>Saniye</small>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SÜRPRİZ -->
+<section id="surpriz">
+
+    <div class="section-title">
+        <span>Son bir şey</span>
+        <h2>Burada küçük bir sürpriz var.</h2>
+    </div>
+
+    <div class="surprise">
+
+        <div class="surprise-box">
+
+            <div class="big-heart">❤️</div>
+
+            <h2>Tahire...</h2>
+
+            <p>
+                Buraya kadar geldiysen,
+                artık bu küçük sırrı açabilirsin.
+            </p>
+
+            <button class="btn" onclick="openMessage()">
+                Sürprizi Aç
+            </button>
+
+            <div class="hidden-message" id="message">
+
+                Eğer bunu okuyorsan,
+                sana söylemek istediğim son bir şey var.
+                <br><br>
+
+                Hayatımda olduğun için mutluyum.
+                Seninle yaşadığım güzel anların
+                daha fazlasını yaşayabilmek dileğiyle...
+                <br><br>
+
+                Bazen uzun cümlelere gerek yok.
+                <br><br>
+
+                <strong>
+                    İyi ki varsın Tahire. ❤️
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    Bu küçük dünya <span>Tahire</span> için hazırlandı. ❤️
+</footer>
+
+<script>
+
+/* YILDIZLAR */
+
+const stars = document.getElementById("stars");
+
+for(let i=0;i<150;i++){
+
+    const star = document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left = Math.random()*100 + "%";
+    star.style.top = Math.random()*100 + "%";
+
+    star.style.animationDelay =
+        Math.random()*4 + "s";
+
+    star.style.animationDuration =
+        (2 + Math.random()*4) + "s";
+
+    stars.appendChild(star);
+}
+
+
+/* UÇAN KALPLER */
+
+const hearts = document.getElementById("hearts");
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "float-heart";
+
+    heart.innerHTML =
+        ["❤️","💗","💕","💖","♥"][Math.floor(Math.random()*5)];
+
+    heart.style.left =
+        Math.random()*100 + "%";
+
+    heart.style.fontSize =
+        (12 + Math.random()*25) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random()*7) + "s";
+
+    hearts.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },13000);
+}
+
+setInterval(createHeart,900);
+
+
+/* SÜRPRİZ */
+
+function openMessage(){
+
+    const message =
+        document.getElementById("message");
+
+    if(message.style.display === "block"){
+
+        message.style.display = "none";
+
+    }else{
+
+        message.style.display = "block";
+
+        for(let i=0;i<20;i++){
+
+            setTimeout(createHeart,i*80);
+
+        }
+    }
+}
+
+
+/* SAYIÇ */
+
+const startDate =
+    new Date("2026-08-20T20:00:00");
+
+function updateCounter(){
+
+    const now = new Date();
+
+    let difference =
+        now - startDate;
+
+    if(difference < 0)
+        difference = 0;
+
+    const totalSeconds =
+        Math.floor(difference/1000);
+
+    const days =
+        Math.floor(totalSeconds/86400);
+
+    const hours =
+        Math.floor(
+            (totalSeconds%86400)/3600
+        );
+
+    const minutes =
+        Math.floor(
+            (totalSeconds%3600)/60
+        );
+
+    const seconds =
+        totalSeconds%60;
+
+    document.getElementById("days")
+        .textContent = days;
+
+    document.getElementById("hours")
+        .textContent = hours;
+
+    document.getElementById("minutes")
+        .textContent = minutes;
+
+    document.getElementById("seconds")
+        .textContent = seconds;
+}
+
+updateCounter();
+
+setInterval(updateCounter,1000);
+
+
+/* SAYFA AÇILIŞINDA KALPLER */
+
+for(let i=0;i<15;i++){
+
+    setTimeout(createHeart,i*250);
+
+}
+
+</script>
+
+</body>
+</html>
