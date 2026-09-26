@@ -7,1422 +7,427 @@
 <title>Tahire ❤️</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    background:#080408;
-    color:white;
-    font-family:'Montserrat',sans-serif;
-    overflow-x:hidden;
-}
-
-/* ARKA PLAN */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-10;
-
-    background:
-    radial-gradient(circle at 20% 20%,rgba(255,50,120,.18),transparent 30%),
-    radial-gradient(circle at 80% 30%,rgba(180,30,100,.14),transparent 30%),
-    radial-gradient(circle at 50% 90%,rgba(255,30,90,.12),transparent 35%),
-    linear-gradient(135deg,#080408,#180812,#080408);
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #120b1c, #29152f, #140b20);
+    color: white;
+    overflow-x: hidden;
 }
 
 /* YILDIZLAR */
 
-.stars{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:-5;
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,180,220,.6) 1px, transparent 1px);
+    background-size: 70px 70px, 110px 110px;
+    background-position: 0 0, 30px 40px;
+    opacity: .35;
 }
 
-.star{
-    position:absolute;
-    width:2px;
-    height:2px;
-    background:white;
-    border-radius:50%;
+/* NAVBAR */
 
-    animation:twinkle 3s infinite;
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    background: rgba(10,5,15,.65);
+    backdrop-filter: blur(12px);
+    z-index: 100;
 }
 
-@keyframes twinkle{
-
-    0%,100%{
-        opacity:.1;
-        transform:scale(.5);
-    }
-
-    50%{
-        opacity:1;
-        transform:scale(1.5);
-    }
-
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
 }
 
-/* KALPLER */
-
-.hearts{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:20;
-    overflow:hidden;
+nav a:hover {
+    color: #ff8fc7;
 }
 
-.heart{
-    position:absolute;
-    bottom:-40px;
+/* GENEL */
 
-    animation:floatHeart linear forwards;
-
-    opacity:0;
+section {
+    min-height: 100vh;
+    padding: 120px 20px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
-@keyframes floatHeart{
-
-    0%{
-        transform:translateY(0) rotate(0);
-        opacity:0;
-    }
-
-    15%{
-        opacity:.8;
-    }
-
-    100%{
-        transform:translateY(-110vh) rotate(360deg);
-        opacity:0;
-    }
-
+.container {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
 }
 
-/* NAV */
+/* BAŞLANGIÇ */
 
-nav{
-    position:fixed;
-    top:0;
-    left:0;
-
-    width:100%;
-
-    padding:20px 7%;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    background:rgba(8,4,9,.5);
-
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(255,255,255,.05);
-
-    z-index:100;
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(65px, 12vw, 130px);
+    color: #ff9bcf;
+    text-shadow: 0 0 25px rgba(255,120,190,.45);
 }
 
-.logo{
-    font-family:'Cormorant Garamond',serif;
-    font-size:32px;
-    color:#ff83a9;
+.hero p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #eee;
 }
 
-.logo span{
-    color:white;
+.heart {
+    font-size: 45px;
+    animation: heartbeat 1.5s infinite;
+    margin-top: 25px;
 }
 
-nav ul{
-    display:flex;
-    gap:30px;
-    list-style:none;
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.18); }
 }
 
-nav a{
-    text-decoration:none;
-    color:white;
+/* KART */
 
-    font-size:11px;
-    letter-spacing:2px;
-
-    opacity:.7;
-
-    transition:.3s;
+.card {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 25px;
+    padding: 40px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 50px rgba(0,0,0,.3);
 }
 
-nav a:hover{
-    opacity:1;
-    color:#ff83aa;
+h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 60px;
+    color: #ff9bcf;
+    margin-bottom: 30px;
 }
 
-/* HERO */
-
-.hero{
-
-    min-height:100vh;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:120px 20px 80px;
-
-    position:relative;
-}
-
-.hero-content{
-    max-width:950px;
-}
-
-.mini{
-
-    color:#ff83a9;
-
-    font-size:11px;
-
-    letter-spacing:7px;
-
-    text-transform:uppercase;
-
-    margin-bottom:35px;
-
-    animation:appear 1.5s ease;
-}
-
-.hero h1{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:clamp(90px,18vw,220px);
-
-    font-weight:500;
-
-    line-height:.75;
-
-    background:
-    linear-gradient(
-        120deg,
-        #fff,
-        #ffd9e6,
-        #ff6496,
-        #fff
-    );
-
-    background-size:300%;
-
-    -webkit-background-clip:text;
-
-    -webkit-text-fill-color:transparent;
-
-    animation:
-    titleAnimation 7s infinite,
-    appear 1.5s ease;
-}
-
-@keyframes titleAnimation{
-
-    0%{
-        background-position:0%;
-    }
-
-    50%{
-        background-position:100%;
-    }
-
-    100%{
-        background-position:0%;
-    }
-
-}
-
-.hero-description{
-
-    max-width:650px;
-
-    margin:50px auto 0;
-
-    color:#cbbdc5;
-
-    line-height:2;
-
-    font-size:16px;
-
-    animation:appear 2s ease;
-}
-
-@keyframes appear{
-
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-.scroll{
-
-    position:absolute;
-
-    bottom:30px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    color:#81717b;
-
-    font-size:9px;
-
-    letter-spacing:4px;
-}
-
-/* SES BUTONU */
-
-.voice-btn{
-
-    border:none;
-
-    background:rgba(255,90,140,.1);
-
-    border:1px solid rgba(255,120,160,.25);
-
-    color:#ff9aba;
-
-    padding:9px 16px;
-
-    border-radius:30px;
-
-    cursor:pointer;
-
-    font-family:'Montserrat',sans-serif;
-
-    font-size:11px;
-
-    margin-top:18px;
-
-    transition:.3s;
-}
-
-.voice-btn:hover{
-
-    background:rgba(255,90,140,.2);
-
-    transform:translateY(-2px);
-
-}
-
-.voice-btn.playing{
-
-    background:#ff477f;
-
-    color:white;
-
-}
-
-/* SECTIONS */
-
-section{
-    padding:130px 7%;
-}
-
-.section-title{
-
-    text-align:center;
-
-    margin-bottom:70px;
-}
-
-.section-title span{
-
-    color:#ff759f;
-
-    font-size:10px;
-
-    letter-spacing:6px;
-
-    text-transform:uppercase;
-}
-
-.section-title h2{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:65px;
-
-    font-weight:500;
-
-    margin:12px 0;
-}
-
-.section-title p{
-
-    color:#8f8089;
-
-    font-size:14px;
+.card p {
+    line-height: 2;
+    color: #f2eaf0;
 }
 
 /* MEKTUP */
 
-.letter{
-
-    max-width:850px;
-
-    margin:auto;
-
-    padding:65px;
-
-    border-radius:35px;
-
-    background:
-
-    linear-gradient(
-        145deg,
-        rgba(255,255,255,.05),
-        rgba(255,80,130,.02)
-    );
-
-    border:1px solid rgba(255,255,255,.08);
-
-    box-shadow:
-    0 40px 100px rgba(0,0,0,.4);
-
-    text-align:center;
+.letter {
+    text-align: left;
 }
 
-.letter-text{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:25px;
-
-    line-height:1.9;
-
-    color:#eadfe4;
+.letter-title {
+    text-align: center;
 }
 
-.signature{
-
-    margin-top:40px;
-
-    color:#ff83aa;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:30px;
+.letter-block {
+    margin-bottom: 28px;
+    padding: 22px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.08);
 }
 
-/* KARTLAR */
-
-.cards{
-
-    max-width:1100px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:20px;
+.letter-block p {
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 15px;
 }
 
-.card{
+/* SES BUTONU */
 
-    min-height:270px;
-
-    padding:40px 30px;
-
-    border-radius:28px;
-
-    background:
-    rgba(255,255,255,.035);
-
-    border:1px solid rgba(255,255,255,.07);
-
-    text-align:center;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    transition:.5s;
+.voice-btn {
+    border: none;
+    background: linear-gradient(135deg, #ff6fb5, #d94b91);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    transition: .3s;
+    box-shadow: 0 5px 18px rgba(255,80,160,.2);
 }
 
-.card:hover{
-
-    transform:translateY(-10px);
-
-    background:
-    rgba(255,70,130,.07);
-
-    border-color:
-    rgba(255,100,150,.25);
-
+.voice-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255,80,160,.35);
 }
 
-.card-icon{
-
-    font-size:40px;
-
-    margin-bottom:20px;
+.voice-btn.stop {
+    background: linear-gradient(135deg, #8d3c69, #63294c);
 }
 
-.card h3{
+/* NEDEN SEN */
 
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:30px;
-
-    margin-bottom:15px;
+.reasons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
 
-.card p{
-
-    color:#9e9099;
-
-    line-height:1.8;
-
-    font-size:13px;
+.reason {
+    padding: 30px 20px;
+    background: rgba(255,255,255,.06);
+    border-radius: 20px;
+    transition: .3s;
 }
 
-/* BÜYÜK SÖZ */
-
-.quote{
-
-    min-height:70vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
+.reason:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,.1);
 }
 
-.quote-box{
-
-    max-width:900px;
+.reason span {
+    font-size: 35px;
+    display: block;
+    margin-bottom: 15px;
 }
 
-.quote-heart{
-
-    font-size:45px;
-
-    margin-bottom:30px;
+.reason h3 {
+    color: #ff9bcf;
+    margin-bottom: 10px;
 }
 
-.quote-box h2{
+/* ZAMAN */
 
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:clamp(45px,7vw,85px);
-
-    font-weight:500;
-
-    line-height:1.1;
+.counter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 30px;
 }
 
-.quote-box h2 span{
-
-    color:#ff729e;
+.time-box {
+    min-width: 120px;
+    padding: 25px 15px;
+    background: rgba(255,255,255,.07);
+    border-radius: 20px;
 }
 
-/* SAYIÇ */
-
-.counter-area{
-
-    text-align:center;
+.time-box strong {
+    display: block;
+    font-size: 32px;
+    color: #ff9bcf;
 }
 
-.counter{
-
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:15px;
-}
-
-.time{
-
-    width:150px;
-
-    padding:30px 15px;
-
-    border-radius:25px;
-
-    background:rgba(255,255,255,.04);
-
-    border:1px solid rgba(255,255,255,.07);
-}
-
-.time strong{
-
-    display:block;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:55px;
-
-    color:#ff80a7;
-}
-
-.time small{
-
-    color:#82737d;
-
-    font-size:9px;
-
-    letter-spacing:2px;
+.time-box span {
+    font-size: 13px;
+    color: #ccc;
 }
 
 /* SÜRPRİZ */
 
-.surprise{
-
-    max-width:700px;
-
-    margin:auto;
-
-    text-align:center;
+.surprise button {
+    border: none;
+    padding: 18px 35px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff6fb5, #d9468d);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 25px;
 }
 
-.surprise-box{
-
-    padding:65px 35px;
-
-    border-radius:35px;
-
-    border:
-    1px solid rgba(255,100,150,.15);
-
-    background:
-    radial-gradient(
-        circle,
-        rgba(255,70,130,.1),
-        rgba(255,255,255,.025)
-    );
+.hidden-message {
+    display: none;
+    margin-top: 30px;
+    font-size: 20px;
+    line-height: 2;
+    color: #ffd1e7;
 }
 
-.big-heart{
-
-    font-size:65px;
-
-    animation:heartbeat 1.5s infinite;
-
-}
-
-@keyframes heartbeat{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    15%{
-        transform:scale(1.15);
-    }
-
-    30%{
-        transform:scale(1);
-    }
-
-    45%{
-        transform:scale(1.1);
-    }
-
-}
-
-.surprise-box h2{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:50px;
-
-    margin:20px 0;
-}
-
-.surprise-box p{
-
-    color:#998a93;
-
-    line-height:1.8;
-
-    font-size:14px;
-}
-
-.surprise-button{
-
-    margin-top:30px;
-
-    border:none;
-
-    padding:17px 35px;
-
-    border-radius:50px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ff477f,
-        #ff91b4
-    );
-
-    color:white;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    box-shadow:
-    0 15px 40px
-    rgba(255,50,110,.25);
-
-    transition:.3s;
-}
-
-.surprise-button:hover{
-
-    transform:translateY(-4px);
-
-}
-
-.hidden-message{
-
-    display:none;
-
-    margin-top:35px;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    background:rgba(255,255,255,.04);
-
-    color:#e7dbe1;
-
-    line-height:1.9;
-
-    animation:appear .8s ease;
-}
-
-/* FOOTER */
-
-footer{
-
-    padding:60px 20px;
-
-    text-align:center;
-
-    color:#655761;
-
-    border-top:
-    1px solid rgba(255,255,255,.06);
-
-    font-size:11px;
-
-    letter-spacing:2px;
-}
-
-footer span{
-
-    color:#ff759f;
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #aaa;
+    position: relative;
+    z-index: 2;
 }
 
 /* MOBİL */
 
-@media(max-width:800px){
+@media(max-width:600px) {
 
-    nav{
-        justify-content:center;
+    nav {
+        gap: 12px;
+        padding: 14px 8px;
     }
 
-    nav ul{
-        display:none;
+    nav a {
+        font-size: 11px;
     }
 
-    section{
-        padding:90px 5%;
+    .card {
+        padding: 25px 18px;
     }
 
-    .section-title h2{
-        font-size:48px;
+    h2 {
+        font-size: 48px;
     }
 
-    .letter{
-        padding:40px 22px;
+    .letter-block p {
+        font-size: 14px;
     }
-
-    .letter-text{
-        font-size:21px;
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .time{
-        width:130px;
-    }
-
-    .time strong{
-        font-size:45px;
-    }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="stars" id="stars"></div>
-
-<div class="hearts" id="hearts"></div>
-
-
-<!-- NAV -->
+<div class="stars"></div>
 
 <nav>
-
-    <div class="logo">
-        E <span>♥</span> T
-    </div>
-
-    <ul>
-
-        <li>
-            <a href="#baslangic">
-                Başlangıç
-            </a>
-        </li>
-
-        <li>
-            <a href="#mektup">
-                Mektup
-            </a>
-        </li>
-
-        <li>
-            <a href="#neden">
-                Neden Sen?
-            </a>
-        </li>
-
-        <li>
-            <a href="#zaman">
-                Zaman
-            </a>
-        </li>
-
-        <li>
-            <a href="#surpriz">
-                Sürpriz
-            </a>
-        </li>
-
-    </ul>
-
+    <a href="#home">Başlangıç</a>
+    <a href="#letter">Mektup</a>
+    <a href="#reasons">Neden Sen?</a>
+    <a href="#time">Zaman</a>
+    <a href="#surprise">Sürpriz</a>
 </nav>
 
 
-<!-- HERO -->
+<!-- BAŞLANGIÇ -->
 
-<section class="hero" id="baslangic">
+<section id="home" class="hero">
+    <div class="container">
 
-    <div class="hero-content">
-
-        <div class="mini">
-            Sana ayrılmış küçük bir dünya
-        </div>
+        <div class="heart">❤️</div>
 
         <h1>Tahire</h1>
 
-        <div class="hero-description">
-
-            Bazı insanlar hayatımıza sessizce girer.
-            Sonra fark etmeden en güzel anılarımızın
-            bir parçası olurlar.
-
-            <br><br>
-
-            Bu sayfa da onlardan biri için...
-
-            <br>
-
-            <button
-                class="voice-btn"
-                onclick="speakText(this,'Bazı insanlar hayatımıza sessizce girer. Sonra fark etmeden en güzel anılarımızın bir parçası olurlar. Bu sayfa da onlardan biri için.')">
-
-                🔊 Seslendir
-
-            </button>
-
-        </div>
+        <p>
+            Bazı insanlar hayatımıza tesadüfen girer,
+            ama bazıları hayatımızın güzel bir parçası olur.
+        </p>
 
     </div>
-
-    <div class="scroll">
-        AŞAĞI KAYDIR ↓
-    </div>
-
 </section>
 
 
 <!-- MEKTUP -->
 
-<section id="mektup">
+<section id="letter">
+    <div class="container">
 
-    <div class="section-title">
+        <div class="card letter">
 
-        <span>
-            Sana bir mektup
-        </span>
+            <h2 class="letter-title">Sana Bir Mektup</h2>
 
-        <h2>
-            Tahire'ye...
-        </h2>
+            <div class="letter-block">
 
-        <p>
-            Bazı şeyleri söylemek yerine yazmak daha kolaydır.
-        </p>
+                <p>
+                    Tahire, bazen insanın söylemek istediği
+                    o kadar çok şey oluyor ki hangi cümleden
+                    başlayacağını bilemiyor.
+                </p>
 
-        <button
-            class="voice-btn"
-            onclick="speakText(this,'Tahire’ye. Bazı şeyleri söylemek yerine yazmak daha kolaydır.')">
+                <button class="voice-btn" onclick="speak(this, this.parentElement.querySelector('p').innerText)">
+                    🔊 Seslendir
+                </button>
 
-            🔊 Seslendir
-
-        </button>
-
-    </div>
-
-
-    <div class="letter">
-
-        <div class="letter-text">
-
-            Tahire...
-
-            <br><br>
-
-            Bazen bir insanın hayatımıza ne zaman
-            ve nasıl girdiğini düşünürüz.
-
-            Ama bazı insanların hayatımıza girmesi
-            için büyük bir sebep gerekmez.
-
-            Sadece doğru zamanda karşılaşmak yeterlidir.
-
-            <br><br>
-
-            Seninle konuştuğum her an,
-            birlikte güldüğümüz her küçük şey
-            ve paylaştığımız her güzel an
-            benim için ayrı bir yerde.
-
-            <br><br>
-
-            Belki kelimeler her şeyi anlatmaya yetmez.
-
-            Ama şunu bilmeni isterim:
-
-            Seni tanımış olmak hayatımın
-            güzel tesadüflerinden biri.
-
-            <br><br>
-
-            Ve eğer gelecekte bu sayfaya tekrar
-            bakarsak, umarım bugünlerden çok daha
-            fazla güzel anımız olur.
-
-        </div>
-
-
-        <button
-            class="voice-btn"
-            onclick="speakText(this,`
-            Tahire. Bazen bir insanın hayatımıza ne zaman ve nasıl girdiğini düşünürüz.
-            Ama bazı insanların hayatımıza girmesi için büyük bir sebep gerekmez.
-            Sadece doğru zamanda karşılaşmak yeterlidir.
-            Seninle konuştuğum her an, birlikte güldüğümüz her küçük şey
-            ve paylaştığımız her güzel an benim için ayrı bir yerde.
-            Belki kelimeler her şeyi anlatmaya yetmez.
-            Ama şunu bilmeni isterim:
-            Seni tanımış olmak hayatımın güzel tesadüflerinden biri.
-            Ve eğer gelecekte bu sayfaya tekrar bakarsak,
-            umarım bugünlerden çok daha fazla güzel anımız olur.
-            `)">
-
-            🔊 Mektubu Seslendir
-
-        </button>
-
-
-        <div class="signature">
-            İyi ki varsın, Tahire. ❤️
-        </div>
-
-        <button
-            class="voice-btn"
-            onclick="speakText(this,'İyi ki varsın, Tahire.')">
-
-            🔊 Seslendir
-
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- NEDEN SEN -->
-
-<section id="neden">
-
-    <div class="section-title">
-
-        <span>
-            Küçük detaylar
-        </span>
-
-        <h2>
-            Neden Sen?
-        </h2>
-
-        <p>
-            Çünkü bazı cevapların tek bir kelimesi yoktur.
-        </p>
-
-        <button
-            class="voice-btn"
-            onclick="speakText(this,'Neden Sen? Çünkü bazı cevapların tek bir kelimesi yoktur.')">
-
-            🔊 Seslendir
-
-        </button>
-
-    </div>
-
-
-    <div class="cards">
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                🌹
             </div>
 
-            <h3>
-                Gülüşün
-            </h3>
 
-            <p>
-                Bazen insanın bütün gününü değiştiren
-                şey sadece küçük bir gülümsemedir.
-            </p>
+            <div class="letter-block">
 
-            <button
-                class="voice-btn"
-                onclick="speakText(this,'Gülüşün. Bazen insanın bütün gününü değiştiren şey sadece küçük bir gülümsemedir.')">
+                <p>
+                    Seninle tanıştığım günden beri bazı şeylerin
+                    daha farklı hissettirdiğini fark ettim.
+                    Günün içinde küçük bir şey bile olsa,
+                    seni hatırlamak yüzümde bir gülümseme oluşturuyor.
+                </p>
 
-                🔊 Seslendir
+                <button class="voice-btn" onclick="speak(this, this.parentElement.querySelector('p').innerText)">
+                    🔊 Seslendir
+                </button>
 
-            </button>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                ✨
             </div>
 
-            <h3>
-                Enerjin
-            </h3>
 
-            <p>
-                Yanında olduğumda sıradan anların bile
-                farklı hissettirmesi.
-            </p>
+            <div class="letter-block">
 
-            <button
-                class="voice-btn"
-                onclick="speakText(this,'Enerjin. Yanında olduğumda sıradan anların bile farklı hissettirmesi.')">
+                <p>
+                    Belki sana her zaman anlatamam,
+                    belki bazen kelimeler yeterli gelmez.
+                    Ama bilmeni istediğim bir şey var:
+                    seni tanımak benim için gerçekten güzel bir şey.
+                </p>
 
-                🔊 Seslendir
+                <button class="voice-btn" onclick="speak(this, this.parentElement.querySelector('p').innerText)">
+                    🔊 Seslendir
+                </button>
 
-            </button>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                🌙
             </div>
 
-            <h3>
-                Konuşmalarımız
-            </h3>
 
-            <p>
-                Saatin kaç olduğunu unutturacak kadar
-                güzel sohbetler.
-            </p>
+            <div class="letter-block">
 
-            <button
-                class="voice-btn"
-                onclick="speakText(this,'Konuşmalarımız. Saatin kaç olduğunu unutturacak kadar güzel sohbetler.')">
+                <p>
+                    Seninle konuştuğumda zamanın nasıl geçtiğini
+                    anlamıyorum. Bazen sadece birkaç kelime
+                    bile günümü güzelleştirmeye yetiyor.
+                </p>
 
-                🔊 Seslendir
+                <button class="voice-btn" onclick="speak(this, this.parentElement.querySelector('p').innerText)">
+                    🔊 Seslendir
+                </button>
 
-            </button>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                🫶
             </div>
 
-            <h3>
-                Huzurun
-            </h3>
 
-            <p>
-                Bazen hiçbir şey söylemeden bile
-                iyi hissettiren o güzel his.
-            </p>
+            <div class="letter-block">
 
-            <button
-                class="voice-btn"
-                onclick="speakText(this,'Huzurun. Bazen hiçbir şey söylemeden bile iyi hissettiren o güzel his.')">
+                <p>
+                    Bu sayfadaki her şey aslında sana söylemek
+                    istediğim birkaç küçük cümlenin bir araya
+                    gelmiş hali.
+                    Çünkü bazı duygular anlatılmaktan çok
+                    hissettirilmek istenir.
+                </p>
 
-                🔊 Seslendir
+                <button class="voice-btn" onclick="speak(this, this.parentElement.querySelector('p').innerText)">
+                    🔊 Seslendir
+                </button>
 
-            </button>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                💫
             </div>
 
-            <h3>
-                Anılarımız
-            </h3>
 
-            <p>
-                Küçük anların zamanla en güzel
-                hatıralara dönüşmesi.
-            </p>
+            <div class="letter-block">
 
-            <button
-                class="voice-btn"
-                onclick="speakText(this,'Anılarımız. Küçük anların zamanla en güzel hatıralara dönüşmesi.')">
+                <p>
+                    İyi ki hayatımda güzel bir iz bıraktın Tahire.
+                    Umarım bu küçük sayfaya baktığında,
+                    yüzünde benim burada görmek istediğim
+                    o güzel gülümseme oluşur.
+                </p>
 
-                🔊 Seslendir
-
-            </button>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                ❤️
-            </div>
-
-            <h3>
-                Sen
-            </h3>
-
-            <p>
-                Aslında bütün bu cevapların sonunda
-                tek bir isim var: Tahire.
-            </p>
-
-            <button
-                class="voice-btn"
-                onclick="speakText(this,'Sen. Aslında bütün bu cevapların sonunda tek bir isim var: Tahire.')">
-
-                🔊 Seslendir
-
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- BÜYÜK SÖZ -->
-
-<section class="quote">
-
-    <div class="quote-box">
-
-        <div class="quote-heart">
-            ❤️
-        </div>
-
-        <h2>
-
-            Bazı insanlar
-            <br>
-
-            hayatımıza gelir ve
-
-            <br>
-
-            <span>
-                kalbimizde kalır.
-            </span>
-
-        </h2>
-
-        <p>
-            Sen benim için o insanlardan birisin.
-        </p>
-
-        <button
-            class="voice-btn"
-            onclick="speakText(this,'Bazı insanlar hayatımıza gelir ve kalbimizde kalır. Sen benim için o insanlardan birisin.')">
-
-            🔊 Seslendir
-
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- ZAMAN -->
-
-<section class="counter-area" id="zaman">
-
-    <div class="section-title">
-
-        <span>
-            Bizim zamanımız
-        </span>
-
-        <h2>
-            Her saniyesi değerli
-        </h2>
-
-        <p>
-            Birlikte geçirilen zamanın küçük bir sayacı.
-        </p>
-
-        <button
-            class="voice-btn"
-            onclick="speakText(this,'Bizim zamanımız. Her saniyesi değerli. Birlikte geçirilen zamanın küçük bir sayacı.')">
-
-            🔊 Seslendir
-
-        </button>
-
-    </div>
-
-
-    <div class="counter">
-
-        <div class="time">
-
-            <strong id="days">
-                0
-            </strong>
-
-            <small>
-                Gün
-            </small>
-
-        </div>
-
-
-        <div class="time">
-
-            <strong id="hours">
-                0
-            </strong>
-
-            <small>
-                Saat
-            </small>
-
-        </div>
-
-
-        <div class="time">
-
-            <strong id="minutes">
-                0
-            </strong>
-
-            <small>
-                Dakika
-            </small>
-
-        </div>
-
-
-        <div class="time">
-
-            <strong id="seconds">
-                0
-            </strong>
-
-            <small>
-                Saniye
-            </small>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- SÜRPRİZ -->
-
-<section id="surpriz">
-
-    <div class="section-title">
-
-        <span>
-            Son bir şey
-        </span>
-
-        <h2>
-            Küçük bir sürpriz
-        </h2>
-
-        <button
-            class="voice-btn"
-            onclick="speakText(this,'Son bir şey. Küçük bir sürpriz.')">
-
-            🔊 Seslendir
-
-        </button>
-
-    </div>
-
-
-    <div class="surprise">
-
-        <div class="surprise-box">
-
-            <div class="big-heart">
-                ❤️
-            </div>
-
-            <h2>
-                Tahire...
-            </h2>
-
-            <p>
-                Buraya kadar geldiysen,
-                artık bu küçük sırrı açabilirsin.
-            </p>
-
-            <button
-                class="voice-btn"
-                onclick="speakText(this,'Buraya kadar geldiysen, artık bu küçük sırrı açabilirsin.')">
-
-                🔊 Seslendir
-
-            </button>
-
-            <br>
-
-            <button
-                class="surprise-button"
-                onclick="openSurprise()">
-
-                Sürprizi Aç ❤️
-
-            </button>
-
-
-            <div
-                class="hidden-message"
-                id="hiddenMessage">
-
-                Eğer bunu okuyorsan,
-                sana söylemek istediğim son bir şey var.
-
-                <br><br>
-
-                Hayatımda olduğun için mutluyum.
-
-                Seninle yaşadığım güzel anların
-                daha fazlasını yaşayabilmek dileğiyle...
-
-                <br><br>
-
-                Bazen uzun cümlelere gerek yok.
-
-                <br><br>
-
-                <strong>
-                    İyi ki varsın Tahire. ❤️
-                </strong>
-
-                <br>
-
-                <button
-                    class="voice-btn"
-                    onclick="speakText(this,`
-                    Eğer bunu okuyorsan,
-                    sana söylemek istediğim son bir şey var.
-                    Hayatımda olduğun için mutluyum.
-                    Seninle yaşadığım güzel anların daha fazlasını yaşayabilmek dileğiyle.
-                    Bazen uzun cümlelere gerek yok.
-                    İyi ki varsın Tahire.
-                    `)">
-
-                    🔊 Mesajı Seslendir
-
+                <button class="voice-btn" onclick="speak(this, this.parentElement.querySelector('p').innerText)">
+                    🔊 Seslendir
                 </button>
 
             </div>
@@ -1430,361 +435,245 @@ footer span{
         </div>
 
     </div>
-
 </section>
 
 
-<!-- FOOTER -->
+<!-- NEDEN SEN -->
+
+<section id="reasons">
+    <div class="container">
+
+        <h2>Neden Sen?</h2>
+
+        <div class="reasons">
+
+            <div class="reason">
+                <span>🌸</span>
+                <h3>Gülüşün</h3>
+                <p>En sıradan anı bile güzelleştiren küçük bir detay.</p>
+            </div>
+
+            <div class="reason">
+                <span>✨</span>
+                <h3>Enerjin</h3>
+                <p>Konuştuğumuzda insana iyi gelen güzel bir enerji.</p>
+            </div>
+
+            <div class="reason">
+                <span>💫</span>
+                <h3>Sen</h3>
+                <p>Çünkü seni sen yapan bütün küçük detaylar.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ZAMAN -->
+
+<section id="time">
+    <div class="container">
+
+        <div class="card">
+
+            <h2>Birlikte Geçen Zaman</h2>
+
+            <p>
+                Bazı zamanlar sadece takvimdeki günlerden ibaret değildir.
+                Bazıları güzel anılara dönüşür.
+            </p>
+
+            <div class="counter">
+
+                <div class="time-box">
+                    <strong id="days">0</strong>
+                    <span>Gün</span>
+                </div>
+
+                <div class="time-box">
+                    <strong id="hours">0</strong>
+                    <span>Saat</span>
+                </div>
+
+                <div class="time-box">
+                    <strong id="minutes">0</strong>
+                    <span>Dakika</span>
+                </div>
+
+                <div class="time-box">
+                    <strong id="seconds">0</strong>
+                    <span>Saniye</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- SÜRPRİZ -->
+
+<section id="surprise">
+    <div class="container">
+
+        <div class="card surprise">
+
+            <h2>Bir Sürpriz ❤️</h2>
+
+            <p>
+                Buraya kadar geldiysen küçük bir sürprizi hak ettin.
+            </p>
+
+            <button onclick="showMessage()">
+                Sürprizi Aç
+            </button>
+
+            <div class="hidden-message" id="message">
+                Tahire... ❤️<br><br>
+                Umarım bu küçük sayfa sana güzel bir gülümseme
+                bırakır. Bazı şeylerin değeri büyüklüğünde değil,
+                hissettirdiği duygudadır.
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
 
 <footer>
-
-    Bu küçük dünya
-    <span>Tahire</span>
-    için hazırlandı. ❤️
-
-    <br><br>
-
-    <button
-        class="voice-btn"
-        onclick="speakText(this,'Bu küçük dünya Tahire için hazırlandı.')">
-
-        🔊 Seslendir
-
-    </button>
-
+    Tahire ❤️
 </footer>
 
 
 <script>
 
-/* ==========================================
-   YILDIZLAR
-========================================== */
-
-const stars =
-document.getElementById("stars");
-
-for(let i=0;i<150;i++){
-
-    const star =
-    document.createElement("div");
-
-    star.className="star";
-
-    star.style.left =
-    Math.random()*100+"%";
-
-    star.style.top =
-    Math.random()*100+"%";
-
-    star.style.animationDelay =
-    Math.random()*4+"s";
-
-    star.style.animationDuration =
-    (2+Math.random()*4)+"s";
-
-    stars.appendChild(star);
-}
-
-
-/* ==========================================
-   KALPLER
-========================================== */
-
-const hearts =
-document.getElementById("hearts");
-
-function createHeart(){
-
-    const heart =
-    document.createElement("div");
-
-    heart.className="heart";
-
-    heart.innerHTML =
-    ["❤️","💗","💕","💖","♥️"][
-
-        Math.floor(
-            Math.random()*5
-        )
-
-    ];
-
-    heart.style.left =
-    Math.random()*100+"%";
-
-    heart.style.fontSize =
-    (12+Math.random()*25)+"px";
-
-    heart.style.animationDuration =
-    (5+Math.random()*7)+"s";
-
-    hearts.appendChild(heart);
-
-    setTimeout(()=>{
-
-        heart.remove();
-
-    },13000);
-
-}
-
-setInterval(createHeart,900);
-
-
-/* ==========================================
-   SES SİSTEMİ
-========================================== */
+/* ================================
+   SADECE MEKTUP SESLENDİRME
+   ================================ */
 
 let currentButton = null;
 
-function speakText(button,text){
+function speak(button, text) {
 
-    /* Eğer aynı butona tekrar basıldıysa */
-
-    if(
-        currentButton === button &&
-        speechSynthesis.speaking
-    ){
-
+    /* Eğer şu anda bir ses konuşuyorsa durdur */
+    if (speechSynthesis.speaking) {
         speechSynthesis.cancel();
 
-        button.innerHTML =
-        "🔊 Seslendir";
+        if (currentButton) {
+            currentButton.innerHTML = "🔊 Seslendir";
+            currentButton.classList.remove("stop");
+        }
 
-        button.classList.remove("playing");
-
-        currentButton=null;
-
-        return;
+        /* Aynı butona tekrar basıldıysa sadece durdur */
+        if (currentButton === button) {
+            currentButton = null;
+            return;
+        }
     }
 
+    const speech = new SpeechSynthesisUtterance(text);
 
-    /* Önce mevcut sesi durdur */
+    /* Türkçe ses */
+    speech.lang = "tr-TR";
 
-    speechSynthesis.cancel();
+    /*
+       Daha sakin ve duygusal hissettirmek için
+       standart sesten daha yavaş konuşma
+    */
+    speech.rate = 0.78;
 
-    if(currentButton){
-
-        currentButton.innerHTML =
-        "🔊 Seslendir";
-
-        currentButton.classList.remove(
-            "playing"
-        );
-    }
-
-
-    const speech =
-    new SpeechSynthesisUtterance(text);
-
-
-    /* Türkçe */
-
-    speech.lang="tr-TR";
-
-
-    /* Konuşma hızı */
-
-    speech.rate=0.9;
-
-
-    /* Ses tonu */
-
-    speech.pitch=1;
-
+    /* Biraz daha yumuşak ton */
+    speech.pitch = 0.90;
 
     /* Ses seviyesi */
+    speech.volume = 1;
 
-    speech.volume=1;
+    currentButton = button;
 
+    button.innerHTML = "⏹ Durdur";
+    button.classList.add("stop");
 
-    button.innerHTML =
-    "⏹ Durdur";
+    speech.onend = function() {
 
-    button.classList.add("playing");
+        button.innerHTML = "🔊 Seslendir";
+        button.classList.remove("stop");
 
-    currentButton=button;
-
-
-    speech.onend=function(){
-
-        button.innerHTML =
-        "🔊 Seslendir";
-
-        button.classList.remove(
-            "playing"
-        );
-
-        currentButton=null;
-
+        currentButton = null;
     };
 
+    speech.onerror = function() {
 
-    speech.onerror=function(){
+        button.innerHTML = "🔊 Seslendir";
+        button.classList.remove("stop");
 
-        button.innerHTML =
-        "🔊 Seslendir";
-
-        button.classList.remove(
-            "playing"
-        );
-
-        currentButton=null;
-
+        currentButton = null;
     };
-
 
     speechSynthesis.speak(speech);
-
 }
 
 
-/* ==========================================
+/* ================================
    SÜRPRİZ
-========================================== */
+   ================================ */
 
-function openSurprise(){
+function showMessage() {
 
-    const message =
-    document.getElementById(
-        "hiddenMessage"
-    );
+    const message = document.getElementById("message");
 
-    if(message.style.display==="block"){
-
-        message.style.display="none";
-
-        return;
+    if (message.style.display === "block") {
+        message.style.display = "none";
+    } else {
+        message.style.display = "block";
     }
-
-
-    message.style.display="block";
-
-
-    for(let i=0;i<25;i++){
-
-        setTimeout(
-            createHeart,
-            i*80
-        );
-
-    }
-
 }
 
 
-/* ==========================================
+/* ================================
    ZAMAN SAYACI
-========================================== */
+   ================================ */
 
-/*
-   Sayacın başlangıcı:
-   20 Ağustos 2026
-   Saat 20:00
+const startDate = new Date("2026-08-20T20:00:00");
 
-   Site açıldığı anda
-   geçen zamanı hesaplar.
-*/
+function updateCounter() {
 
-const startDate =
-new Date("2026-08-20T20:00:00");
+    const now = new Date();
 
+    let difference = now - startDate;
 
-function updateCounter(){
+    if (difference < 0) difference = 0;
 
-    const now =
-    new Date();
+    const seconds = Math.floor(difference / 1000);
 
-    let difference =
-    now-startDate;
+    const days = Math.floor(seconds / 86400);
 
-    if(difference<0)
-        difference=0;
+    const hours = Math.floor((seconds % 86400) / 3600);
 
+    const minutes = Math.floor((seconds % 3600) / 60);
 
-    const totalSeconds =
-    Math.floor(
-        difference/1000
-    );
+    const remainingSeconds = seconds % 60;
 
-
-    const days =
-    Math.floor(
-        totalSeconds/86400
-    );
-
-
-    const hours =
-    Math.floor(
-        (totalSeconds%86400)/3600
-    );
-
-
-    const minutes =
-    Math.floor(
-        (totalSeconds%3600)/60
-    );
-
-
-    const seconds =
-    totalSeconds%60;
-
-
-    document.getElementById(
-        "days"
-    ).textContent=days;
-
-
-    document.getElementById(
-        "hours"
-    ).textContent=hours;
-
-
-    document.getElementById(
-        "minutes"
-    ).textContent=minutes;
-
-
-    document.getElementById(
-        "seconds"
-    ).textContent=seconds;
-
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = remainingSeconds;
 }
-
 
 updateCounter();
 
-setInterval(
-    updateCounter,
-    1000
-);
+setInterval(updateCounter, 1000);
 
 
-/* ==========================================
-   SAYFA AÇILINCA KÜÇÜK KALP YAĞMURU
-========================================== */
+/* Sayfa kapanırken sesi durdur */
 
-for(let i=0;i<15;i++){
-
-    setTimeout(
-        createHeart,
-        i*250
-    );
-
-}
-
-
-/* ==========================================
-   SAYFA KAPANIRKEN SESİ DURDUR
-========================================== */
-
-window.addEventListener(
-    "beforeunload",
-    ()=>{
-        speechSynthesis.cancel();
-    }
-);
+window.addEventListener("beforeunload", function() {
+    speechSynthesis.cancel();
+});
 
 </script>
 
